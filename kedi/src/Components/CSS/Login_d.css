@@ -1,0 +1,43 @@
+
+.card-img{
+    object-fit: cover;
+    height: '100%';
+}
+.custom-container{
+    max-width: 100%;
+}
+.label{
+    margin-top: 15px;
+}
+.form-control{
+    margin-top: 12px;
+}
+.forgot{
+    margin-top: 12px;
+}
+.ulc{
+    display: flex;
+    list-style-type: none;
+    gap: 5px;
+}
+.square-input{
+    height: 35px;
+    width: 40px;
+    background-color: aliceblue;
+    border-radius: 5px;
+    border-color: lightskyblue;
+    padding-left: 10px;
+}
+.cname{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+  }
+  #fl{
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+  }
+  
+ 
