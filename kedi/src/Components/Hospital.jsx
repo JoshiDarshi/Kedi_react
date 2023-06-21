@@ -1,11 +1,26 @@
-import React from 'react'
+import React, {useState} from 'react'
+import Modal from './CSS/Modal.css?inline'
 import Header_main from './Header_main'
 import { Button } from 'bootstrap'
 import delete_t from './delete_t.jpeg'
 import edit from './edit.png'
 import 'bootstrap/dist/css/bootstrap.min.css'
 
+
+
 function Hospital() {
+  const [modal, setModal] = useState(false);
+
+  const toggleModal = () => {
+    setModal(!modal);
+  };
+
+  if(modal) {
+    document.body.classList.add('active-modal')
+  } else {
+    document.body.classList.remove('active-modal')
+  }
+
   return (
     <div>
         <Header_main/>
@@ -20,7 +35,17 @@ function Hospital() {
             <li>
               <div className="content">
                 <div className="input-group" style={{display:'flex'}}>
-                 <button type='submit' className=" btn btn-primary btn-block">Add hospital</button>
+                 <>
+                 <button onClick={toggleModal}  className=" btn btn-primary btn-block">Add hospital</button>
+                {modal &&(
+                  <div className="modal">
+                    <div onClick={toggleModal} className="overlay"></div>
+                    <div className="modal-content">
+                      <h3>Add Hospital</h3>
+                    </div>
+                  </div>
+                )}
+                </>
                 </div >
               </div>
             </li>
