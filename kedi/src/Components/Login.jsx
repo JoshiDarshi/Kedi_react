@@ -6,48 +6,62 @@ import { Link } from 'react-router-dom'
 
 //import { Container, Row, Col, Form, Button, Card } from 'react-bootstrap'
 function Login() {
-  
+  const boxShadowStyle = {
+    boxShadow: '4px 4px 8px 4px rgba(135, 206, 250, 1)',
+    //borderLeft: '4px solid lightskyblue',
+    boxSizing: 'border-box'
+  };
   return (
-    
-    <div className="container-xl custom-container ">
-      <div className="row justify-content-center mt-5">
-        <div className="col-md-12">
-          <div className="card">
-            <div className="row no-gutters">
-              <div className="col-md-6">
-                <img src={Loginpic} className="card-img" alt="Login" height={'320px'} width={'650px'} />
-              </div>
-              <div className="col-md-6">
-                <div className="card-body">
-                  <h2 className="card-title text-center">Login to Kedi</h2>
-                  <form>
-                    <div className="form-group">
-                      <label className=' label'>Enter Email</label>
-                      <input type="text" className="form-control" placeholder="Email" required />
-                      
+
+    <section className="main-section">
+        <div className="container" style={{ height: 450,marginTop: 60}}>
+            <div className="row">
+                <div className="col-md-8 mx-auto"  style={{position: 'relative'}}>
+                    <div className="card" style={{borderRadius: 10, marginTop: 45,boxShadow: '4px 4px 8px 4px rgba(135, 206, 250, 1)'}}>
+                        <div className="row">
+                            <div className="col-md-6">
+                                <img src={Loginpic}
+                                    width="350px" height="370px" />
+
+                            </div>
+                            <div className="col-md-6 align-items-center">
+                                <div className="card-body text-black">
+                                    <h5 className="h5_c" style={{letterSpacing: 1, fontWeight: 800}}>Login to kedi</h5>
+                                    <p className="pr">Enter your Login details</p>
+                                    <form id="form">
+                                        <div className="form-group">
+                                            <label for="email">Email</label>
+                                            <input type="email" id="e1" className="form-control"
+                                                placeholder="Enter your email" required/><br/>
+                                        </div>
+                                        <div classname="form-group">
+                                            <label for="password">Password</label>
+                                            <input type="password" id="p1" className="form-control" placeholder="******"/>
+                                        </div>
+                                        <div className='forgot_pwd'>
+                                          <Link to="Forgot"><a style={{marginLeft:150,color:'black'}}>Forgot Password?</a></Link>
+                                        </div>
+                                        <Link to="Patients">
+                                        <button id="submit" className="btn btn-primary" style={{backgroundColor: 'lightskyblue',width:310,marginTop: 20,borderColor: 'lightblue'}}>Login</button>
+                                        </Link>
+                                    </form>
+                                </div>
+                                
+                            </div>
+
+                        </div>
+
                     </div>
-                    <label className='label'>Enter Password</label>
-                    <div className="form-group">
-                      <input type="password" className="form-control" placeholder="*****" required />
-                    </div>
-                    <div className='forgot'>
-                    <Link to={"/forgot"}>
-                           Forgot Password?</Link>
-                    </div><br/>
-                    <div className="form-group">
-                    <Link to={"/patients"}>
-                    <button type="submit" className="btn btn-primary btn-block">Sign in</button>
-                    </Link>
-                    </div>
-                  </form>
+
                 </div>
-              </div>
+
             </div>
-          </div>
+
         </div>
-      </div>
-    </div>
-    
+
+        
+    </section>
+ 
   )
 }
 

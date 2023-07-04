@@ -4,7 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import Login from './Components/Login'
-import Forgot from './Components/forgot'
+import Forgot from './Components/Forgot'
 //import Login_d from './Components/CSS/Login_d.css'
 import {BrowserRouter as Router, Routes, Route} from "react-router-dom";
 import Header from './Components/Header_main'
@@ -20,6 +20,9 @@ import Unapproved_Professionals from './Components/Unapproved_Professionals'
 import Hospital from './Components/Hospital'
 import Unapproved_patients from './Components/Unapproved_patients'
 import Registration from './Components/Registration'
+import Popup from 'reactjs-popup'
+import 'reactjs-popup/dist/index.css'
+import Myaccount from './Components/Myaccount'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -40,6 +43,7 @@ function App() {
           <Route path='/hospital' element={<Hospital/>}/>
           <Route path='/unapproved_patients' element={<Unapproved_patients/>}/>
           <Route path='/registration' element={<Registration/>}/>
+          <Route path='/myaccount' element={<Myaccount/>}/>
 
         </Routes>
       </Router>
